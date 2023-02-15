@@ -15,12 +15,14 @@ export class FaceSnapComponent implements OnInit{
     }
 
     onSnap(){
+      this.faceSnap.snaps++;
+      /*
       if( this.buttonText==="Oh Snap" ){
          this.faceSnap.snaps++;
          this.buttonText="Ooops Snap";
       }else{
           this.faceSnap.snaps--;
           this.buttonText="Oh Snap";
-      }
+      }*/
     }
 }
