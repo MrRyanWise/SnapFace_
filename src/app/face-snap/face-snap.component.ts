@@ -1,4 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
+import { FaceSnap } from "../models/face-snap.model";
 
 @Component({
   selector: 'app-face-snap',
@@ -7,30 +8,18 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class FaceSnapComponent implements OnInit{
     @Input() faceSnap!: FaceSnap; //on injecte l'instance de FaceSnap
-
-    title!: string;
-    description!: string;
-    createdDate!: Date;
-    snaps!: number;
-    imageUrl!: string;
     buttonText!: string;
 
-
     ngOnInit() {
-      this.title = "Archibald";
-      this.description="Mon meilleur ami depuis tout petit !";
-      this.createdDate = new Date();
-      this.snaps = 6;
-      this.imageUrl = "./assets/lo1.jpg";
       this.buttonText="Oh Snap";
     }
 
     onSnap(){
       if( this.buttonText==="Oh Snap" ){
-         this.snaps++;
+         this.faceSnap.snaps++;
          this.buttonText="Ooops Snap";
       }else{
-          this.snaps--;
+          this.faceSnap.snaps--;
           this.buttonText="Oh Snap";
       }
     }
